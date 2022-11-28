@@ -82,3 +82,11 @@
 #file-name-admin {
   max-width: 300px;
 }
+
+input[aria-invalid=true] {
+  border-color: red !important;
+}
+
+.form-error {
+  color: red;
+}
