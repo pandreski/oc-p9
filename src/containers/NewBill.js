@@ -14,7 +14,7 @@ export default class NewBill {
     this.fileName = null
     this.billId = null
     new Logout({ document, localStorage, onNavigate })
-    this.allowedFileTypes = ['image/png', 'image/jpeg', 'image/jpg']
+    this.allowedFileTypes = ['image/png', 'image/jpeg'] // @see: https://en.wikipedia.org/wiki/Media_type#Common_examples_[10]
   }
 
   handleChangeFile = e => {
