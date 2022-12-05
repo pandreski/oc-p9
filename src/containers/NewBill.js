@@ -26,8 +26,6 @@ export default class NewBill {
     const fileName = filePath[filePath.length-1]
     const formData = new FormData()
     const email = JSON.parse(localStorage.getItem("user")).email
-    formData.append('file', file)
-    formData.append('email', email)
 
     // Check if file format is accepted
     if (!this.allowedFileTypes.includes(file.type)) {
@@ -36,6 +34,9 @@ export default class NewBill {
       fileInputError.classList.remove('hidden');
       return;
     }
+
+    formData.append('file', file)
+    formData.append('email', email)
 
     // Remove form error if file format is accepted
     fileInput.setAttribute('aria-invalid', 'false');

@@ -51,7 +51,18 @@ export default class {
               }
             }
           })
-        return bills
+
+        const validBills = [];
+
+        // Remove draft bills
+        bills.forEach((bill) => {
+          if (typeof bill.status !== 'undefined') {
+            validBills.push(bill);
+          }
+        })
+
+        // Return bills sorted by date
+        return validBills.sort((a, b) => (new Date(a.date) - new Date(b.date)));
       })
     }
   }
